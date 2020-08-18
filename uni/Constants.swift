@@ -20,5 +20,7 @@ struct Constants{
         static let marketplaceViewController = "MarketPlaceViewController"
         static let chatRoomViewController = "chatRoomViewController"
         static let marketplaceNavigationController = "MarketPlaceNavigationController"
+        static let loginContainerViewController = "LoginContainerViewController"
+        static let introMainViewController = "IntroMainViewController"
     }
 }

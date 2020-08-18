@@ -10,7 +10,7 @@
         <!--Paging Menu View Controller-->
         <scene sceneID="EVQ-F1-cch">
             <objects>
-                <viewController id="5KM-qn-37y" customClass="PagingMenuViewController" customModule="PagingMenuControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5KM-qn-37y" customClass="PagingMenuViewController" customModule="NightFall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cj8-Gj-349"/>
                         <viewControllerLayoutGuide type="bottom" id="WNE-af-GIV"/>

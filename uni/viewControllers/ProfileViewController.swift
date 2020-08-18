@@ -11,74 +11,48 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 import SDWebImage
+import Lottie
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
+    @IBOutlet weak var ch2_talk: AnimationView!
+    @IBOutlet weak var ch1_blink: AnimationView!
     
-    @IBOutlet weak var profileImageBut: UIButton!
-    var profileImgSet: UIImage?
-    let defaults = UserDefaults.standard
-        
+    let animationView = AnimationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let default_bool = defaults.bool(forKey: "Default Profile Image")
-        print(default_bool)
-        profileImageBut.imageView?.layer.cornerRadius = profileImageBut.imageView!.bounds.width/2
-        if (default_bool != true){
-            ProgressHUD.show("Waiting...", interaction: false)
-            let db = Firestore.firestore()
-            db.collection("Users").document(Auth.auth().currentUser!.uid).addSnapshotListener { (snapshot, error) in
-                if let error = error{
-                    ProgressHUD.showError(error as! String)
-                }
-                if let data = snapshot!.data(){
-                    let profileImgURL = data["Profile Picture URL"] as! String
-                    self.profileImageBut!.sd_setImage(with: URL(string: profileImgURL), for: .normal) { (downloadedImg, error, cacheType, downloadURL) in
-                    if(error != nil){
-                        ProgressHUD.showError(error as! String)
-                    }
-                        ProgressHUD.dismiss()
-                }
-            }
-
-        }
-    }
+        
+        startAnimation()
+    
     }
     
-    @IBAction func changeProfImg(_ sender: Any) {
-        let imagePickController = UIImagePickerController()
-        imagePickController.delegate = self
-        present(imagePickController, animated: true, completion: nil)
+    func startAnimation(){
+        
+        ch1_blink.contentMode = .scaleAspectFit
+        ch1_blink.loopMode = .loop
+        ch1_blink.play()
+        
+        ch2_talk.contentMode = .scaleAspectFit
+        ch2_talk.loopMode = .loop
+        ch2_talk.play()
+    }
+    
+    @IBAction func change(_ sender: Any) {
+      
+        ch2_talk.animation = Animation.named("ch2_talk")
+        ch2_talk.loopMode = .playOnce
+        ch2_talk.play { (Success) in
+            if Success{
+                self.ch2_talk.animation = Animation.named("ch2_blink")
+                self.ch2_talk.loopMode = .loop
+                self.ch2_talk.play()
+            }
+        }
+        
         
     }
     
-    
-    @IBAction func signOutAction(_ sender: Any) {
-            do{
-                try Auth.auth().signOut()
-                transToLogIn()
-            }
-            catch let error{
-                print(error as! String)
-            }
-        }
-    
-        func transToLogIn(){
-            guard let window = UIApplication.shared.keyWindow else {
-                return
-            }
-    
-            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let logInVC = storyboard.instantiateViewController(identifier: Constants.StoryBoard.logInViewController) as? ViewController
-    
-            view.window?.rootViewController = logInVC
-            let options: UIView.AnimationOptions = .transitionCrossDissolve
-            let duration: TimeInterval = 0.7
-            UIView.transition(with: window, duration: duration, options: options, animations: {}) { (Bool) in
-    
-            }
-
-    }
 }
 
         

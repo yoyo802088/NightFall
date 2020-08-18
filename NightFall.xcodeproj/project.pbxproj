@@ -12,6 +12,7 @@
 		4E0002E823FB4ABE001CCAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC5AF7F23BC317300C5D6AE /* Main.storyboard */; };
 		4E0FAA2A240C5EDF007E74C0 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FAA29240C5EDF007E74C0 /* PostDetailViewController.swift */; };
 		4E14722823E4024300F52E09 /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E14722723E4024300F52E09 /* EmailVerificationViewController.swift */; };
+		4E2261E224DFB829006D339D /* ch1_blink.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E2261E124DFB829006D339D /* ch1_blink.json */; };
 		4E36CAB723BEF3EE004A216B /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36CAB523BEF3EE004A216B /* ProgressHUD.m */; };
 		4E36CAB923BEFDC2004A216B /* SellPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36CAB823BEFDC2004A216B /* SellPostViewController.swift */; };
 		4E36CAC023C174FA004A216B /* PostCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36CABF23C174FA004A216B /* PostCellInfo.swift */; };
@@ -24,6 +25,14 @@
 		4E38429324683C6A00154611 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E38429224683C6A00154611 /* MenuViewController.storyboard */; };
 		4E38429524683CCC00154611 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38429424683CCC00154611 /* RootViewController.swift */; };
 		4E384297246843F400154611 /* GistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E384296246843F400154611 /* GistsViewController.swift */; };
+		4E43824124DFBC9600BA3F93 /* ch2_blink.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E43824024DFBC9600BA3F93 /* ch2_blink.json */; };
+		4E46A09C24C9858700BB96CA /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46A09B24C9858700BB96CA /* InitialViewController.swift */; };
+		4E46A0A224CAD34200BB96CA /* IntroMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46A0A124CAD34100BB96CA /* IntroMainViewController.swift */; };
+		4E46A0A624CB045700BB96CA /* LoginContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46A0A524CB045700BB96CA /* LoginContainerViewController.swift */; };
+		4E89CBA424E1A80300B54F59 /* fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E89CBA324E1A80300B54F59 /* fire.json */; };
+		4E89CBA824E432AB00B54F59 /* LayoutTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89CBA724E432AB00B54F59 /* LayoutTestViewController.swift */; };
+		4E89CBAA24E56E2B00B54F59 /* chatRoomTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89CBA924E56E2B00B54F59 /* chatRoomTopViewController.swift */; };
+		4E89CBAE24E58F4100B54F59 /* bg for chat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E89CBAD24E58F4100B54F59 /* bg for chat.mp4 */; };
 		4E8B920A23FB6D3D00AE4205 /* absl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B920923FB6D3D00AE4205 /* absl.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E8B920C23FB6D3D00AE4205 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B920B23FB6D3D00AE4205 /* FBLPromises.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E8B920E23FB6D3D00AE4205 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B920D23FB6D3D00AE4205 /* FirebaseAuth.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -47,6 +56,20 @@
 		4E8B923A23FB6E6400AE4205 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8B923923FB6E6400AE4205 /* SDWebImage.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4E8B923B23FB8AE100AE4205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC5AF8223BC317400C5D6AE /* Assets.xcassets */; };
 		4E9F4E4623D2D9280040D319 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5AFBE23BD9E2D00C5D6AE /* ProfileViewController.swift */; };
+		4EB0922924E59EB100C54753 /* bg for login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4EB0922824E59EB100C54753 /* bg for login.mp4 */; };
+		4EB0922B24E66EDC00C54753 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0922A24E66EDC00C54753 /* KeyboardLayoutConstraint.swift */; };
+		4EB0923024E6C62400C54753 /* ch1_join.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB0922E24E6C62300C54753 /* ch1_join.json */; };
+		4EB0923124E6C62400C54753 /* ch2_join.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB0922F24E6C62400C54753 /* ch2_join.json */; };
+		4EB0923324E6F2DA00C54753 /* ch2_talk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB0923224E6F2DA00C54753 /* ch2_talk.json */; };
+		4EB3F69F24E6FA0C00F6A8F6 /* ch1_talk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F69E24E6FA0C00F6A8F6 /* ch1_talk.json */; };
+		4EB3F6A224E6FA1400F6A8F6 /* ch3_blink.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6A024E6FA1400F6A8F6 /* ch3_blink.json */; };
+		4EB3F6A324E6FA1400F6A8F6 /* ch3_talk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6A124E6FA1400F6A8F6 /* ch3_talk.json */; };
+		4EB3F6A824E7964E00F6A8F6 /* ch4_talk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6A724E7964E00F6A8F6 /* ch4_talk.json */; };
+		4EB3F6AA24E7966E00F6A8F6 /* ch4_blink.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6A924E7966E00F6A8F6 /* ch4_blink.json */; };
+		4EB3F6AC24E8FDCE00F6A8F6 /* ch4_join.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6AB24E8FDCE00F6A8F6 /* ch4_join.json */; };
+		4EB3F6AE24E8FE0A00F6A8F6 /* ch3_join.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6AD24E8FE0A00F6A8F6 /* ch3_join.json */; };
+		4EB3F6B024E8FFAD00F6A8F6 /* chat_bg.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EB3F6AF24E8FFAD00F6A8F6 /* chat_bg.json */; };
+		4EB3F6B224E92D1100F6A8F6 /* PrepareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3F6B124E92D1100F6A8F6 /* PrepareViewController.swift */; };
 		4EB74E452472C2AD00299E4F /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB74E442472C2AD00299E4F /* testViewController.swift */; };
 		4EB74E4A2472E02B00299E4F /* Gotham Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EB74E492472E02B00299E4F /* Gotham Book.otf */; };
 		4EB74E4C249CB30C00299E4F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB74E4B249CB30C00299E4F /* ChatViewController.swift */; };
@@ -94,6 +117,7 @@
 		3796E9D3EF5676D829DA0518 /* Pods-NightFall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NightFall.debug.xcconfig"; path = "Target Support Files/Pods-NightFall/Pods-NightFall.debug.xcconfig"; sourceTree = "<group>"; };
 		4E0FAA29240C5EDF007E74C0 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		4E14722723E4024300F52E09 /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
+		4E2261E124DFB829006D339D /* ch1_blink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch1_blink.json; sourceTree = "<group>"; };
 		4E36CA9A23BDE915004A216B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E36CAB223BEF3EC004A216B /* uni-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uni-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E36CAB323BEF3ED004A216B /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
@@ -110,6 +134,14 @@
 		4E38429224683C6A00154611 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		4E38429424683CCC00154611 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		4E384296246843F400154611 /* GistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsViewController.swift; sourceTree = "<group>"; };
+		4E43824024DFBC9600BA3F93 /* ch2_blink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch2_blink.json; sourceTree = "<group>"; };
+		4E46A09B24C9858700BB96CA /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		4E46A0A124CAD34100BB96CA /* IntroMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroMainViewController.swift; sourceTree = "<group>"; };
+		4E46A0A524CB045700BB96CA /* LoginContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainerViewController.swift; sourceTree = "<group>"; };
+		4E89CBA324E1A80300B54F59 /* fire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fire.json; sourceTree = "<group>"; };
+		4E89CBA724E432AB00B54F59 /* LayoutTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestViewController.swift; sourceTree = "<group>"; };
+		4E89CBA924E56E2B00B54F59 /* chatRoomTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatRoomTopViewController.swift; sourceTree = "<group>"; };
+		4E89CBAD24E58F4100B54F59 /* bg for chat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bg for chat.mp4"; sourceTree = "<group>"; };
 		4E8B920923FB6D3D00AE4205 /* absl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = absl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B920B23FB6D3D00AE4205 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B920D23FB6D3D00AE4205 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +164,20 @@
 		4E8B922F23FB6D3D00AE4205 /* PagingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PagingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B923723FB6D3D00AE4205 /* ProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B923923FB6E6400AE4205 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB0922824E59EB100C54753 /* bg for login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bg for login.mp4"; sourceTree = "<group>"; };
+		4EB0922A24E66EDC00C54753 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		4EB0922E24E6C62300C54753 /* ch1_join.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch1_join.json; sourceTree = "<group>"; };
+		4EB0922F24E6C62400C54753 /* ch2_join.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch2_join.json; sourceTree = "<group>"; };
+		4EB0923224E6F2DA00C54753 /* ch2_talk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch2_talk.json; sourceTree = "<group>"; };
+		4EB3F69E24E6FA0C00F6A8F6 /* ch1_talk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch1_talk.json; sourceTree = "<group>"; };
+		4EB3F6A024E6FA1400F6A8F6 /* ch3_blink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch3_blink.json; sourceTree = "<group>"; };
+		4EB3F6A124E6FA1400F6A8F6 /* ch3_talk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch3_talk.json; sourceTree = "<group>"; };
+		4EB3F6A724E7964E00F6A8F6 /* ch4_talk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch4_talk.json; sourceTree = "<group>"; };
+		4EB3F6A924E7966E00F6A8F6 /* ch4_blink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch4_blink.json; sourceTree = "<group>"; };
+		4EB3F6AB24E8FDCE00F6A8F6 /* ch4_join.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch4_join.json; sourceTree = "<group>"; };
+		4EB3F6AD24E8FE0A00F6A8F6 /* ch3_join.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ch3_join.json; sourceTree = "<group>"; };
+		4EB3F6AF24E8FFAD00F6A8F6 /* chat_bg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chat_bg.json; sourceTree = "<group>"; };
+		4EB3F6B124E92D1100F6A8F6 /* PrepareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareViewController.swift; sourceTree = "<group>"; };
 		4EB74E442472C2AD00299E4F /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		4EB74E492472E02B00299E4F /* Gotham Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Book.otf"; sourceTree = "<group>"; };
 		4EB74E4B249CB30C00299E4F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +266,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E2261E724DFBA3E006D339D /* ch1 */ = {
+			isa = PBXGroup;
+			children = (
+				4EB0922E24E6C62300C54753 /* ch1_join.json */,
+				4EB3F69E24E6FA0C00F6A8F6 /* ch1_talk.json */,
+				4E2261E124DFB829006D339D /* ch1_blink.json */,
+			);
+			path = ch1;
+			sourceTree = "<group>";
+		};
+		4E2261E824DFBA4A006D339D /* ch2 */ = {
+			isa = PBXGroup;
+			children = (
+				4EB0922F24E6C62400C54753 /* ch2_join.json */,
+				4EB0923224E6F2DA00C54753 /* ch2_talk.json */,
+				4E43824024DFBC9600BA3F93 /* ch2_blink.json */,
+			);
+			path = ch2;
+			sourceTree = "<group>";
+		};
 		4E22EDDA23FB645F001EBFC2 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +301,21 @@
 			);
 			name = Models;
 			path = ../Models;
+			sourceTree = "<group>";
+		};
+		4E80B68924DFAA8600524D82 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				4E2261E724DFBA3E006D339D /* ch1 */,
+				4E2261E824DFBA4A006D339D /* ch2 */,
+				4EB0923424E6F2F400C54753 /* ch 3 */,
+				4EB3F6A424E795ED00F6A8F6 /* ch4 */,
+				4EB0922824E59EB100C54753 /* bg for login.mp4 */,
+				4EB3F6AF24E8FFAD00F6A8F6 /* chat_bg.json */,
+				4E89CBAD24E58F4100B54F59 /* bg for chat.mp4 */,
+				4E89CBA324E1A80300B54F59 /* fire.json */,
+			);
+			path = animations;
 			sourceTree = "<group>";
 		};
 		4E8B920823FB6D3D00AE4205 /* Frameworks */ = {
@@ -267,6 +348,26 @@
 				07FAFD691E8FE958E9493D70 /* Pods_NightFallTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EB0923424E6F2F400C54753 /* ch 3 */ = {
+			isa = PBXGroup;
+			children = (
+				4EB3F6A024E6FA1400F6A8F6 /* ch3_blink.json */,
+				4EB3F6A124E6FA1400F6A8F6 /* ch3_talk.json */,
+				4EB3F6AD24E8FE0A00F6A8F6 /* ch3_join.json */,
+			);
+			path = "ch 3";
+			sourceTree = "<group>";
+		};
+		4EB3F6A424E795ED00F6A8F6 /* ch4 */ = {
+			isa = PBXGroup;
+			children = (
+				4EB3F6A924E7966E00F6A8F6 /* ch4_blink.json */,
+				4EB3F6AB24E8FDCE00F6A8F6 /* ch4_join.json */,
+				4EB3F6A724E7964E00F6A8F6 /* ch4_talk.json */,
+			);
+			path = ch4;
 			sourceTree = "<group>";
 		};
 		4EB74E462472DF3300299E4F /* Fonts */ = {
@@ -307,11 +408,13 @@
 		4EC5AF7823BC317300C5D6AE /* uni */ = {
 			isa = PBXGroup;
 			children = (
+				4E80B68924DFAA8600524D82 /* animations */,
 				4EB74E462472DF3300299E4F /* Fonts */,
 				4E36CABA23BF3D10004A216B /* Models */,
 				4EC5AF7F23BC317300C5D6AE /* Main.storyboard */,
 				4E38429024683C2600154611 /* PagingMenuViewController.storyboard */,
 				4EC5AFB423BC7B1900C5D6AE /* Constants.swift */,
+				4E89CBA724E432AB00B54F59 /* LayoutTestViewController.swift */,
 				4EC5AFB023BC580200C5D6AE /* Utilities.swift */,
 				4EC5AFAD23BC46BE00C5D6AE /* viewControllers */,
 				4EC5AF7923BC317300C5D6AE /* AppDelegate.swift */,
@@ -328,9 +431,9 @@
 				4E38429424683CCC00154611 /* RootViewController.swift */,
 				4E384296246843F400154611 /* GistsViewController.swift */,
 				4EB74E442472C2AD00299E4F /* testViewController.swift */,
-				4EB74E4B249CB30C00299E4F /* ChatViewController.swift */,
 				4EB74E4D249CB3A200299E4F /* Message.swift */,
 				4EB74E4F249CB3AA00299E4F /* Chat.swift */,
+				4EB0922A24E66EDC00C54753 /* KeyboardLayoutConstraint.swift */,
 			);
 			path = uni;
 			sourceTree = "<group>";
@@ -356,6 +459,10 @@
 		4EC5AFAD23BC46BE00C5D6AE /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4EB3F6B124E92D1100F6A8F6 /* PrepareViewController.swift */,
+				4E46A0A124CAD34100BB96CA /* IntroMainViewController.swift */,
+				4E46A09B24C9858700BB96CA /* InitialViewController.swift */,
+				4E46A0A524CB045700BB96CA /* LoginContainerViewController.swift */,
 				4EC5AF7D23BC317300C5D6AE /* ViewController.swift */,
 				4EC5AFA923BC469D00C5D6AE /* SignUpViewController.swift */,
 				4E14722723E4024300F52E09 /* EmailVerificationViewController.swift */,
@@ -366,6 +473,8 @@
 				4E36CAB823BEFDC2004A216B /* SellPostViewController.swift */,
 				4E0FAA29240C5EDF007E74C0 /* PostDetailViewController.swift */,
 				4EB74E53249CC19100299E4F /* chatRoomViewController.swift */,
+				4E89CBA924E56E2B00B54F59 /* chatRoomTopViewController.swift */,
+				4EB74E4B249CB30C00299E4F /* ChatViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -500,11 +609,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E38429124683C2600154611 /* PagingMenuViewController.storyboard in Resources */,
+				4EB3F6AC24E8FDCE00F6A8F6 /* ch4_join.json in Resources */,
+				4EB3F6B024E8FFAD00F6A8F6 /* chat_bg.json in Resources */,
 				4E0002E823FB4ABE001CCAC7 /* Main.storyboard in Resources */,
 				4E0002E723FB4A9F001CCAC7 /* GoogleService-Info.plist in Resources */,
+				4E43824124DFBC9600BA3F93 /* ch2_blink.json in Resources */,
+				4EB3F6AA24E7966E00F6A8F6 /* ch4_blink.json in Resources */,
+				4EB0923124E6C62400C54753 /* ch2_join.json in Resources */,
+				4EB3F6AE24E8FE0A00F6A8F6 /* ch3_join.json in Resources */,
 				4E8B923B23FB8AE100AE4205 /* Assets.xcassets in Resources */,
 				4EB74E4A2472E02B00299E4F /* Gotham Book.otf in Resources */,
+				4EB3F6A324E6FA1400F6A8F6 /* ch3_talk.json in Resources */,
+				4E89CBAE24E58F4100B54F59 /* bg for chat.mp4 in Resources */,
+				4EB0923324E6F2DA00C54753 /* ch2_talk.json in Resources */,
+				4EB3F6A824E7964E00F6A8F6 /* ch4_talk.json in Resources */,
+				4E89CBA424E1A80300B54F59 /* fire.json in Resources */,
+				4E2261E224DFB829006D339D /* ch1_blink.json in Resources */,
+				4EB3F6A224E6FA1400F6A8F6 /* ch3_blink.json in Resources */,
+				4EB3F69F24E6FA0C00F6A8F6 /* ch1_talk.json in Resources */,
 				4E38429324683C6A00154611 /* MenuViewController.storyboard in Resources */,
+				4EB0923024E6C62400C54753 /* ch1_join.json in Resources */,
+				4EB0922924E59EB100C54753 /* bg for login.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,12 +759,16 @@
 			files = (
 				4EB74E54249CC19100299E4F /* chatRoomViewController.swift in Sources */,
 				4EC5AFB723BC874600C5D6AE /* ProfileSetUpViewController.swift in Sources */,
+				4EB0922B24E66EDC00C54753 /* KeyboardLayoutConstraint.swift in Sources */,
 				4EC5AFC323BD9E7100C5D6AE /* NotificationViewController.swift in Sources */,
 				4EC5AFC123BD9E3D00C5D6AE /* MarketPlaceViewController.swift in Sources */,
 				4E0FAA2A240C5EDF007E74C0 /* PostDetailViewController.swift in Sources */,
 				4EC5AFB123BC580200C5D6AE /* Utilities.swift in Sources */,
+				4E89CBA824E432AB00B54F59 /* LayoutTestViewController.swift in Sources */,
 				4E36CAB923BEFDC2004A216B /* SellPostViewController.swift in Sources */,
 				4EC5AF7E23BC317300C5D6AE /* ViewController.swift in Sources */,
+				4E89CBAA24E56E2B00B54F59 /* chatRoomTopViewController.swift in Sources */,
+				4E46A0A624CB045700BB96CA /* LoginContainerViewController.swift in Sources */,
 				4EB74E4E249CB3A200299E4F /* Message.swift in Sources */,
 				4E38428B2468343200154611 /* UsersViewController.swift in Sources */,
 				4EC5AF7A23BC317300C5D6AE /* AppDelegate.swift in Sources */,
@@ -647,13 +776,16 @@
 				4EB74E4C249CB30C00299E4F /* ChatViewController.swift in Sources */,
 				4E36CAC223C17529004A216B /* PostCell.swift in Sources */,
 				4EB74E50249CB3AA00299E4F /* Chat.swift in Sources */,
+				4E46A09C24C9858700BB96CA /* InitialViewController.swift in Sources */,
 				4E3842892468339100154611 /* PagingMenuViewController.swift in Sources */,
 				4E36CAB723BEF3EE004A216B /* ProgressHUD.m in Sources */,
 				4E14722823E4024300F52E09 /* EmailVerificationViewController.swift in Sources */,
 				4E36CAC023C174FA004A216B /* PostCellInfo.swift in Sources */,
 				4EC5AFB523BC7B1900C5D6AE /* Constants.swift in Sources */,
+				4E46A0A224CAD34200BB96CA /* IntroMainViewController.swift in Sources */,
 				4E38428F246835D100154611 /* RepositoriesViewController.swift in Sources */,
 				4E38429524683CCC00154611 /* RootViewController.swift in Sources */,
+				4EB3F6B224E92D1100F6A8F6 /* PrepareViewController.swift in Sources */,
 				4EB74E452472C2AD00299E4F /* testViewController.swift in Sources */,
 				4EC5AFBF23BD9E2D00C5D6AE /* ProfileViewController.swift in Sources */,
 				4E384297246843F400154611 /* GistsViewController.swift in Sources */,
@@ -828,6 +960,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BQUJXG4UAQ;
 				INFOPLIST_FILE = uni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -836,7 +969,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = slope.NightFall;
 				PRODUCT_NAME = NightFall;
 				SWIFT_ENABLE_BATCH_MODE = NO;
@@ -855,6 +988,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BQUJXG4UAQ;
 				INFOPLIST_FILE = uni/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -863,7 +997,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = slope.NightFall;
 				PRODUCT_NAME = NightFall;
 				SWIFT_ENABLE_BATCH_MODE = NO;

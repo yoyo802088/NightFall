@@ -8,37 +8,44 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
 
 class EmailVerificationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
-//            if error != nil{
-//                ProgressHUD.showError("Something went wrong...", interaction: false)
-//            }
-//        })
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+            if error != nil{
+                SVProgressHUD.showError(withStatus:"Something went wrong...")
+                SVProgressHUD.setDefaultMaskType(.clear)
+                SVProgressHUD.dismiss(withDelay: 1.5)
+            }
+        })
         // Do any additional setup after loading the view.
     }
 
     @IBAction func verifiedPressed(_ sender: Any) {
-//        Auth.auth().currentUser?.reload(completion: { (error) in
-//            if error != nil{
-//                ProgressHUD.dismiss()
-//                ProgressHUD.showError("Something went wrong...", interaction: false)
-//            }
-//            else{
-//                if Auth.auth().currentUser?.isEmailVerified == true{
-//                    ProgressHUD.dismiss()
-//                    self.transToProf()
-//                }
-//                else{
-//                    ProgressHUD.dismiss()
-//                    ProgressHUD.showError("Please verify your email!", interaction: false)
-//                }
-//            }
-//        })
-        self.transToProf()
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            if error != nil{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus:"Something went wrong...")
+                SVProgressHUD.setDefaultMaskType(.clear)
+                SVProgressHUD.dismiss(withDelay: 1.5)
+            }
+            else{
+                if Auth.auth().currentUser?.isEmailVerified == true{
+                    SVProgressHUD.dismiss()
+                    self.transToProf()
+                }
+                else{
+                    SVProgressHUD.dismiss()
+                    SVProgressHUD.showError(withStatus:"Please verify your email!")
+                    SVProgressHUD.setDefaultMaskType(.clear)
+                    SVProgressHUD.dismiss(withDelay: 1.5)
+                }
+            }
+        })
+        //self.transToProf()
     }
 
 
@@ -49,7 +56,7 @@ class EmailVerificationViewController: UIViewController {
         }
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(identifier: Constants.StoryBoard.marketplaceNavigationController)
+        let homeVC = storyboard.instantiateViewController(identifier: Constants.StoryBoard.marketplaceViewController) as! MarketPlaceViewController
         
         view.window?.rootViewController = homeVC
         let options: UIView.AnimationOptions = .transitionCrossDissolve

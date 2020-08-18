@@ -14,9 +14,11 @@ class PostCellInfo{
     var title: String?
     var category: String?
     var roomID: String?
-    init(titleText: String, categoryText: String, roomIDText: String){
-        title = titleText
-        category = categoryText
-        roomID = roomIDText
+    var memberNum: Int?
+    init(titleText: String, categoryText: String, roomIDText: String, memberNum: Int){
+        self.title = titleText
+        self.category = categoryText
+        self.roomID = roomIDText
+        self.memberNum = memberNum
     }
 }

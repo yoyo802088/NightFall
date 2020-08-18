@@ -14,7 +14,7 @@ class testViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Utilities.styleFilledButton(testbut)
+        Utilities.styleFilledButton_1(testbut)
         Utilities.styleTextField(testtxt)
         //testbut.setTitleColor(UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1), for:.highlighted)
     }
