@@ -133,6 +133,7 @@ class MarketPlaceViewController: UIViewController {
     }
     
     @objc func refresh() {
+        print(1)
         sellPosts.removeAll()
         manuanLoad()
         refreshControl.endRefreshing()
@@ -199,6 +200,7 @@ class MarketPlaceViewController: UIViewController {
         let db = Firestore.firestore()
         db.collection("Post Images").order(by: "Date Posted", descending: false).getDocuments { (QuerySnapshot, Error) in
             if let query = QuerySnapshot{
+                print("fetch")
                 query.documentChanges.forEach { (DocumentChange) in
                     let document = DocumentChange.document.data()
                     print(document)
@@ -208,8 +210,9 @@ class MarketPlaceViewController: UIViewController {
                     let currentMemberNum = document["Number of Members"] as! Int
                     let post = PostCellInfo(titleText: titleText!, categoryText: categoryText, roomIDText: roomID, memberNum: currentMemberNum)
                     self.sellPosts.insert(post,at:0)  // appending not adjusting to current posts...
-                    self.marketTableView.reloadData()
+                    
                 }
+                self.marketTableView.reloadData()
             }
         }
         
@@ -375,20 +378,16 @@ extension MarketPlaceViewController: UITableViewDataSource, UITableViewDelegate{
                                 defaults.set(false, forKey: "Avatar 4")
                                 defaults.set(currentRoomID! as String, forKey: "currentRoomID")
                                 if((doc_data!["Avatar 1"] as? String) != ""){
-                                    
                                     defaults.set(true, forKey: "Avatar 1")
                                 }
                                 if((doc_data!["Avatar 2"] as? String) != ""){
                                     defaults.set(true, forKey: "Avatar 2")
-                                    
                                 }
                                 if((doc_data!["Avatar 3"] as? String) != ""){
-
                                     defaults.set(true, forKey: "Avatar 3")
                                 }
                                 if((doc_data!["Avatar 4"] as? String) != ""){
                                     defaults.set(true, forKey: "Avatar 4")
-
                                 }
                                 
                                 if ((doc_data!["Avatar 1"] as? String) == ""){
@@ -411,6 +410,7 @@ extension MarketPlaceViewController: UITableViewDataSource, UITableViewDelegate{
                                 }
                                 post_images_col.setData(["Number of Members" : current_number!+1], merge:true)
                                 defaults.set(current_number!+1, forKey: "current_number")
+                                defaults.set(-1, forKey: "join_count")
                                 
                                 guard let window = UIApplication.shared.keyWindow else {
                                     return

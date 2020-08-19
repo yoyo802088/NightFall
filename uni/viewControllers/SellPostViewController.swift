@@ -217,7 +217,7 @@ class SellPostViewController: UIViewController {
         let creatorID = Auth.auth().currentUser?.uid
         dataBaseRef.collection("Post Images").document(roomID as String).setData(["RoomID": roomID, "Title": self.titleTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), "Category": self.categoryTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), "Date Posted": formattedDate, "Creator": creatorID!, "Number of Members":1, "Avatar 1": creatorID!, "Avatar 2":"", "Avatar 3":"", "Avatar 4":""])
         dataBaseRef.collection("Post Images").document(roomID as String).collection("Members").document(creatorID!).setData(["avatar" : "Avatar 1"])
-//        dataBaseRef.collection("Users").document(creatorID! as String).setData(["Current RoomID" : roomID], merge: true)
+        dataBaseRef.collection("Users").document(creatorID! as String).setData(["Current RoomID" : roomID], merge: true)
         defaults.set(true, forKey: "Avatar 1")
         defaults.set(false, forKey: "Avatar 2")
         defaults.set(false, forKey: "Avatar 3")
@@ -225,8 +225,9 @@ class SellPostViewController: UIViewController {
         defaults.set("Avatar 1", forKey: "Avatar")
         defaults.set(roomID as String, forKey: "currentRoomID")
         defaults.set(1, forKey: "current_number")
-//        SVProgressHUD.dismiss()
-//        self.transToChat()
+        defaults.set(0, forKey: "join_count")
+        SVProgressHUD.dismiss()
+        self.transToChat()
                     
             
         }

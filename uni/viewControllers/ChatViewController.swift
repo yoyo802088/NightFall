@@ -22,7 +22,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     var user2ImgUrl = "https://firebasestorage.googleapis.com/v0/b/unimarketplace-dd3f6.appspot.com/o/Profile%20Image%2FS3UtuLPdsFQRV0yrTyr1OazjcP33?alt=media&token=15f1ab56-0d82-4e23-8994-a4ca865ffd38"
     var user2UID = "S3UtuLPdsFQRV0yrTyr1OazjcP33"
     var count = 0
-    var count_join = 0
+    var count_join = UserDefaults.standard.integer(forKey: "join_count")
     private var docReference: DocumentReference?
     
     var messages: [Message] = []
@@ -380,14 +380,15 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
             if let query = QuerySnapshot{
             query.documentChanges.forEach { (DocumentChange) in
                 if DocumentChange.type == .added {
-
-                    if self.count_join > 1{
+                    print(self.count_join)
+                    if self.count_join > 0{
                         let member_data = DocumentChange.document.data()
                         let avatar_joined = member_data["avatar"] as? String
-                        print("joineddd", avatar_joined)
                         if avatar_joined == "Avatar 1"{
+                            print("joineed 1")
                             self.animate(character: "ch1", animation: "ch1_join", default_animation: "ch1_blink")
                         } else if avatar_joined == "Avatar 2"{
+                            print("joineed 2")
                             self.animate(character: "ch2", animation: "ch2_join", default_animation: "ch2_blink")
                         } else if avatar_joined == "Avatar 3"{
                             self.animate(character: "ch3", animation: "ch3_join", default_animation: "ch3_blink")
