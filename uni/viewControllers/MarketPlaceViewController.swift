@@ -62,7 +62,7 @@ class MarketPlaceViewController: UIViewController {
         back_btn.isHidden = true
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         self.marketTableView.addSubview(refreshControl)
         
         self.view.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.15 , alpha: 1.00)
@@ -77,6 +77,9 @@ class MarketPlaceViewController: UIViewController {
         marketTableView.dataSource = self
         
         setupFields()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         loadPosts()
     }
     
@@ -129,9 +132,9 @@ class MarketPlaceViewController: UIViewController {
         
     }
     
-    @objc func refresh(_ sender: AnyObject) {
+    @objc func refresh() {
         sellPosts.removeAll()
-        self.loadPosts()
+        manuanLoad()
         refreshControl.endRefreshing()
     }
     
@@ -191,43 +194,65 @@ class MarketPlaceViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-//    @objc func refresh(sender:AnyObject) {
-//       // Code to refresh table view
-//        sellPosts = [PostCellInfo]()
-//        loadPosts()
-//        refreshControl.endRefreshing()
-//    }
+    
+    func manuanLoad(){
+        let db = Firestore.firestore()
+        db.collection("Post Images").order(by: "Date Posted", descending: false).getDocuments { (QuerySnapshot, Error) in
+            if let query = QuerySnapshot{
+                query.documentChanges.forEach { (DocumentChange) in
+                    let document = DocumentChange.document.data()
+                    print(document)
+                    let titleText = document["Title"] as? String
+                    let categoryText = document["Category"] as! String
+                    let roomID = document["RoomID"] as! String
+                    let currentMemberNum = document["Number of Members"] as! Int
+                    let post = PostCellInfo(titleText: titleText!, categoryText: categoryText, roomIDText: roomID, memberNum: currentMemberNum)
+                    self.sellPosts.insert(post,at:0)  // appending not adjusting to current posts...
+                    self.marketTableView.reloadData()
+                }
+            }
+        }
+        
+    }
+
     
     func loadPosts(){
         let db = Firestore.firestore()
-        db.collection("Post Images").order(by: "Date Posted", descending: false).addSnapshotListener { (QuerySnapshot, error) in
+        
+        
+        db.collection("Post Images").order(by: "Date Posted", descending: false).addSnapshotListener(includeMetadataChanges: false, listener: { (QuerySnapshot, error) in
+            print(1)
+
             if let query = QuerySnapshot{
-                if query.documents.count == 0{
-                    return
-                }
-                else{
+//                if query.documents.count == 0{
+//                    print(0)
+//                    return
+//                }
+//                else{
                     query.documentChanges.forEach { (DocumentChange) in
                         if DocumentChange.type == .added{
+                            print(2)
                             let document = DocumentChange.document.data()
+                            print(document)
                             let titleText = document["Title"] as? String
-                            if titleText != ""{
-                                let categoryText = document["Category"] as! String
-                                let roomID = document["RoomID"] as! String
-                                let currentMemberNum = document["Number of Members"] as! Int
-                                let post = PostCellInfo(titleText: titleText!, categoryText: categoryText, roomIDText: roomID, memberNum: currentMemberNum)
-                                self.sellPosts.insert(post,at:0)  // appending not adjusting to current posts...
-
-                            } else if titleText == ""{
-                                let document_id = DocumentChange.document.documentID
-                                db.collection("Post Images").document(document_id).delete()
-                            }
-                            
+                            let categoryText = document["Category"] as! String
+                            let roomID = document["RoomID"] as! String
+                            let currentMemberNum = document["Number of Members"] as! Int
+                            let post = PostCellInfo(titleText: titleText!, categoryText: categoryText, roomIDText: roomID, memberNum: currentMemberNum)
+                            self.sellPosts.insert(post,at:0)  // appending not adjusting to current posts...
+                            self.marketTableView.reloadData()
+                        }
+                         else if DocumentChange.type == .removed{
+                            print("deleted!!")
+                            self.marketTableView.reloadData()
                         }
                     }
-                }
+
+//                }
             }
-            self.marketTableView.reloadData()
-        }
+
+        })
+        
     }
     
     func transToCreate(){

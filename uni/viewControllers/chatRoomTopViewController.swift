@@ -141,7 +141,7 @@ class chatRoomTopViewController: UIViewController {
             let currentNumber = data!["Number of Members"]
 
             if (currentNumber as! Int-1) == 0{
-                db.collection("Post Images").document(currentRoomID!).setData(["Title" : ""])
+                db.collection("Post Images").document(currentRoomID!).delete()//.setData(["Title" : ""])
             }else{
                 db.collection("Post Images").document(currentRoomID!).setData([currentAvatar! : "", "Number of Members" : currentNumber as! Int-1], merge: true)
                 db.collection("Post Images").document(currentRoomID!).collection("Members").document(currentUserID).delete()

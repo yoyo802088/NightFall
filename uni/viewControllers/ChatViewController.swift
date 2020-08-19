@@ -377,12 +377,11 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         let currentRoomID = UserDefaults.standard.string(forKey: "currentRoomID")
         let docRef = self.db.collection("Post Images").document(currentRoomID!).collection("Members")
         docRef.addSnapshotListener { (QuerySnapshot, errpr) in
-            print(1)
             if let query = QuerySnapshot{
             query.documentChanges.forEach { (DocumentChange) in
                 if DocumentChange.type == .added {
 
-                    if self.count_join > 0{
+                    if self.count_join > 1{
                         let member_data = DocumentChange.document.data()
                         let avatar_joined = member_data["avatar"] as? String
                         print("joineddd", avatar_joined)
