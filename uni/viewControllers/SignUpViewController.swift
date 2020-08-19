@@ -149,7 +149,6 @@ class SignUpViewController: UIViewController {
                             SVProgressHUD.dismiss(withDelay: 1.5)
                         }
                     }
-                    print("here?")
                     SVProgressHUD.dismiss()
                     self.transToEmailVer()
                 }
@@ -170,7 +169,7 @@ class SignUpViewController: UIViewController {
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
-        let emailVerVC = storyboard?.instantiateViewController(identifier: Constants.StoryBoard.emailVerificationViewController) as? EmailVerificationViewController
+        let emailVerVC = storyboard?.instantiateViewController(identifier: Constants.StoryBoard.marketplaceViewController) as? MarketPlaceViewController
         
         view.window?.rootViewController = emailVerVC
         let options: UIView.AnimationOptions = .transitionFlipFromRight

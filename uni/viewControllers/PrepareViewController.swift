@@ -68,30 +68,19 @@ class PrepareViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
             
             if Auth.auth().currentUser != nil{
-                if Auth.auth().currentUser!.isEmailVerified{
-                    SVProgressHUD.dismiss()
-                    SVProgressHUD.showSuccess(withStatus: "Already logged in!")
-                    SVProgressHUD.dismiss(withDelay: 1)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                        self.transToProf()
-                    }
-                    
-                }else{
-                    SVProgressHUD.dismiss()
-                    SVProgressHUD.showError(withStatus: "Email not verified...Please sign up again!")
-                    SVProgressHUD.dismiss(withDelay: 1)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                        self.transToIntro()
-                    }
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showSuccess(withStatus: "Already logged in!")
+                SVProgressHUD.dismiss(withDelay: 1)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    self.transToProf()
                 }
-            } else{
+            }else{
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showSuccess(withStatus: "Please sign in!")
                 SVProgressHUD.dismiss(withDelay: 1)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     self.transToIntro()
                 }
-                
             }
         }
         //}

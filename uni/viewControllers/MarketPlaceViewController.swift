@@ -133,7 +133,6 @@ class MarketPlaceViewController: UIViewController {
     }
     
     @objc func refresh() {
-        print(1)
         sellPosts.removeAll()
         manuanLoad()
         refreshControl.endRefreshing()

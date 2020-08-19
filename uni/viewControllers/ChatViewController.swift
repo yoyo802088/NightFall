@@ -32,9 +32,6 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         ch1_animation.isHidden = true
         ch2_animation.isHidden = true
         ch3_animation.isHidden = true
