@@ -11,6 +11,8 @@ import Lottie
 import FirebaseAuth
 import AVKit
 import SVProgressHUD
+import FirebaseStorage
+import Firebase
 
 class PrepareViewController: UIViewController {
 
@@ -67,13 +69,36 @@ class PrepareViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
             
+            
+            
             if Auth.auth().currentUser != nil{
-                SVProgressHUD.dismiss()
-                SVProgressHUD.showSuccess(withStatus: "Already logged in!")
-                SVProgressHUD.dismiss(withDelay: 1)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                    self.transToProf()
+                let db = Firestore.firestore()
+                db.collection("Users").document(Auth.auth().currentUser!.uid).getDocument { (DocumentSnapshot, Error) in
+                    if Error != nil{
+                        SVProgressHUD.showError(withStatus: "Something went wrong...please try again")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                    }
+                    let document_data = DocumentSnapshot?.data()
+                    let currentRoom = document_data!["Current RoomID"] as? String
+                    if currentRoom != "None"{
+                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showSuccess(withStatus: "Already in chat!")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                            self.transToChat()
+                        }
+                        
+                    } else if currentRoom == "None"{
+                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showSuccess(withStatus: "Already logged in!")
+                        SVProgressHUD.dismiss(withDelay: 1)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                            self.transToMain()
+                        }
+                    }
+                    
                 }
+                
             }else{
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showSuccess(withStatus: "Please sign in!")
@@ -88,7 +113,20 @@ class PrepareViewController: UIViewController {
             
 }
         
+    func transToChat(){
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
         
+        let chatRoomVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.chatRoomViewController) as! chatRoomViewController
+        self.view.window?.rootViewController = chatRoomVC
+        let options: UIView.AnimationOptions = .transitionCrossDissolve
+        let duration: TimeInterval = 0.4
+        UIView.transition(with: window, duration: duration, options: options, animations: {}) { (Bool) in
+
+        }
+
+    }
 
         
     func start_animation(){
@@ -97,7 +135,7 @@ class PrepareViewController: UIViewController {
         fire_animation.play()
     }
     
-    func transToProf(){
+    func transToMain(){
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
