@@ -73,7 +73,8 @@ class PrepareViewController: UIViewController {
             
             if Auth.auth().currentUser != nil{
                 let db = Firestore.firestore()
-                db.collection("Users").document(Auth.auth().currentUser!.uid).getDocument { (DocumentSnapshot, Error) in
+                let currentUserID = Auth.auth().currentUser!.uid
+                db.collection("Users").document(currentUserID).getDocument { (DocumentSnapshot, Error) in
                     if Error != nil{
                         SVProgressHUD.showError(withStatus: "Something went wrong...please try again")
                         SVProgressHUD.dismiss(withDelay: 1)
@@ -85,9 +86,57 @@ class PrepareViewController: UIViewController {
                         SVProgressHUD.showSuccess(withStatus: "Already in chat!")
                         SVProgressHUD.dismiss(withDelay: 1)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                            self.transToChat()
+                            let db = Firestore.firestore()
+                            db.collection("Users").document(currentUserID).setData(["Current RoomID" : "None"], merge: true)
+                            db.collection("Post Images").document(currentRoom! as String).getDocument { (DocumentSnapshot, Error) in
+                                if Error != nil{
+                                    SVProgressHUD.showError(withStatus: "Something went wrong...please try again")
+                                    SVProgressHUD.dismiss(withDelay: 1)
+                                }
+                                let doc_data = DocumentSnapshot?.data()
+                                let currentNumber = doc_data!["Number of Members"] as? Int
+                                if((doc_data!["Avatar 1"] as? String) == currentUserID){
+                                    if (currentNumber!-1) == 0{
+                                        db.collection("Post Images").document(currentRoom!).delete()//.setData(["Title" : ""])
+                                    }else{
+                                        db.collection("Post Images").document(currentRoom!).setData(["Avatar 1": "", "Number of Members" : currentNumber!-1], merge: true)
+                                        db.collection("Post Images").document(currentRoom!).collection("Members").document(currentUserID).delete()
+                                    }
+                                }
+                                else if((doc_data!["Avatar 2"] as? String) == currentUserID){
+                                    if (currentNumber!-1) == 0{
+                                        db.collection("Post Images").document(currentRoom!).delete()//.setData(["Title" : ""])
+                                    }else{
+                                        db.collection("Post Images").document(currentRoom!).setData(["Avatar 2": "", "Number of Members" : currentNumber!-1], merge: true)
+                                        db.collection("Post Images").document(currentRoom!).collection("Members").document(currentUserID).delete()
+                                    }
+                                }
+                                else if((doc_data!["Avatar 3"] as? String) == currentUserID){
+                                    if (currentNumber!-1) == 0{
+                                        db.collection("Post Images").document(currentRoom!).delete()//.setData(["Title" : ""])
+                                    }else{
+                                        db.collection("Post Images").document(currentRoom!).setData(["Avatar 3": "", "Number of Members" : currentNumber!-1], merge: true)
+                                        db.collection("Post Images").document(currentRoom!).collection("Members").document(currentUserID).delete()
+                                    }
+                                }
+                                else if((doc_data!["Avatar 4"] as? String) == currentUserID){
+                                    if (currentNumber!-1) == 0{
+                                        db.collection("Post Images").document(currentRoom!).delete()//.setData(["Title" : ""])
+                                    }else{
+                                        db.collection("Post Images").document(currentRoom!).setData(["Avatar 4": "", "Number of Members" : currentNumber!-1], merge: true)
+                                        db.collection("Post Images").document(currentRoom!).collection("Members").document(currentUserID).delete()
+                                    }
+                                }
+
+                                    
+                                    self.transToMain()
+                                    
+                                }
+                                
+                            
+                            
                         }
-                        
+                            
                     } else if currentRoom == "None"{
                         SVProgressHUD.dismiss()
                         SVProgressHUD.showSuccess(withStatus: "Already logged in!")

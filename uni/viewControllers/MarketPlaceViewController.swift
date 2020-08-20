@@ -61,7 +61,8 @@ class MarketPlaceViewController: UIViewController {
         super.viewDidLoad()
         back_btn.isHidden = true
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [NSAttributedString.Key.foregroundColor:UIColor(red: 0.921, green: 0.921, blue: 0.921, alpha: 1)])
+        refreshControl.tintColor = UIColor(red: 0.921, green: 0.921, blue: 0.921, alpha: 1)
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         self.marketTableView.addSubview(refreshControl)
         
