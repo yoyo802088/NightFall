@@ -23,19 +23,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        if Auth.auth().currentUser != nil{
-//            //if Auth.auth().currentUser!.isEmailVerified{
-//                let window = UIApplication.shared.windows.first
-//                let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let homeVC : UIViewController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as UIViewController
-//                window?.makeKeyAndVisible()
-//                window?.rootViewController = homeVC
-//            }
-//            else{
-//                Auth.auth().currentUser?.delete(completion: { (error) in
-//                })
-//            }
         setupFields()
         }
         
